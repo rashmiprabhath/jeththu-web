@@ -1,15 +1,17 @@
-import { environment } from './../environments/environment.prod';
-import { Injectable } from '@angular/core';
+import {environment} from './../environments/environment.prod';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JproductsService {
 
-  constructor() { }
+  constructor() {
+  }
 
-  getName(): string {
-    return "jeththu-products";
+  getName(): Observable<string> {
+    return of('jeththu-products');
   }
 
 }
