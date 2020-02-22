@@ -1,3 +1,4 @@
+import { JproductsService } from './../jproducts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  name : string = "jeththu products."
+  name : string;
 
-  constructor() { }
+  constructor(private jproductsService: JproductsService) { }
 
   ngOnInit() {
+    this.initName();
+  }
+
+  initName():void{
+    this.name = this.jproductsService.getName();
   }
 
 }
