@@ -1,4 +1,4 @@
-import { JproductsService } from './../jproducts.service';
+import {JproductsService, Product} from './../jproducts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  name : string;
+  name: string;
 
   constructor(private jproductsService: JproductsService) { }
 
@@ -18,7 +18,7 @@ export class ProductComponent implements OnInit {
 
   initName(): void {
     this.jproductsService.getName()
-      .subscribe( name => this.name = name );
+      .subscribe( (product: Product) => this.name = product.name );
   }
 
 }
