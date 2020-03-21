@@ -18,7 +18,7 @@ export class ProductComponent implements OnInit {
 
   initName(): void {
     this.jproductsService.getName()
-      .subscribe( (product: Product) => this.name = product.name );
+      .subscribe( (product) => this.name = product.name );
   }
 
 }
